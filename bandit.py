@@ -4,6 +4,8 @@
 --slanka@ncsu.edu"""
 
 from __future__ import division
+import matplotlib
+
 import numpy as np 
 
 class bandit:
