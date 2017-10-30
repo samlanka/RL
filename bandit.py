@@ -32,7 +32,6 @@ class bandit:
 	def train_ucb(self, timestep, c=1):
 		estimate_t = np.zeros(self.k)
 		counter_t = np.zeros(self.k)
-
 		for i in range(timestep):
 			a_t = np.argmax(estimate_t + c * np.sqrt(np.log(i)/counter_t))
 			counter_t[a_t] = counter_t[a_t] + 1;
