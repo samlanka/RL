@@ -1,8 +1,7 @@
-#!/home/slanka/anaconda2/bin/python
-
-#greedy vs non-greedy
-#sample average vs learning rate
-#initial values / optimal initial values
+"""Numpy code for K-Bandit Problem
+--Sameera Lanka
+--www.sameera-lanka.com
+--slanka@ncsu.edu"""
 
 from __future__ import division
 import numpy as np 
@@ -30,7 +29,7 @@ class bandit:
 			
 		return estimate_t
 
-	def train_ucb(self, timestep, c=5):
+	def train_ucb(self, timestep, c=1):
 		estimate_t = np.zeros(self.k)
 		counter_t = np.zeros(self.k)
 
@@ -39,7 +38,6 @@ class bandit:
 			counter_t[a_t] = counter_t[a_t] + 1;
 			r_t = np.random.normal(self.reward[a_t], 1.0)
 			estimate_t[a_t] = estimate_t[a_t] + (1/(i+1))*(r_t - estimate_t[a_t])
-			#print counter_t
 		return estimate_t
 
 
