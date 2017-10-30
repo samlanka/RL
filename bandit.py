@@ -13,10 +13,10 @@ class bandit:
 		self.k = k;
 		self.reward = np.random.normal(0, 1.0, self.k)
 		print(self.reward)
+		
 
 	def train_egreedy(self, timestep, epsilon=0):
 		estimate_t = np.zeros(self.k)
-
 		for i in range(timestep):			
 	
 			if np.random.sample() < self.epsilon:
@@ -26,9 +26,9 @@ class bandit:
 			
 			r_t = np.random.normal(self.reward[a_t], 1.0)
 			estimate_t[a_t] = estimate_t[a_t] + (1/(i+1))*(r_t - estimate_t[a_t])
-			
 		return estimate_t
 
+	
 	def train_ucb(self, timestep, c=1):
 		estimate_t = np.zeros(self.k)
 		counter_t = np.zeros(self.k)
