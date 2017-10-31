@@ -48,5 +48,6 @@ class bandit:
 
 
 if __name__=="__main__":
+	#example demo
 	prob = bandit(5)  
 	print prob.train_ucb(2000)
