@@ -19,10 +19,10 @@ class bandit:
 		
 
 	def train_egreedy(self, timestep, epsilon=0):
-		#E-greedy value estimation
+		
 		estimate_t = np.zeros(self.k)
 		for i in range(timestep):			
-	
+			#E-greedy value estimation
 			if np.random.sample() < self.epsilon:
 				a_t = np.random.randint(self.k)
 			else:
