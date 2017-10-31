@@ -23,7 +23,7 @@ class bandit:
 		estimate_t = np.zeros(self.k)
 		for i in range(timestep):			
 			#E-greedy value estimation
-			if np.random.sample() < self.epsilon:
+			if np.random.sample() < epsilon:
 				a_t = np.random.randint(self.k)
 			else:
 				a_t = np.argmax(estimate_t)
